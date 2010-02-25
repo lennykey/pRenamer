@@ -28,6 +28,7 @@ zielPath= sys.argv[1]
 
 
 def main(zielPath, neuerName, dateiEndung):
+    ''' Main Funktion, mit allen erforderlichen Anweisungen'''
     command= 'ls ' + zielPath
     string= commands.getoutput(command)
     
