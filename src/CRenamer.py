@@ -1,15 +1,15 @@
 import os
 import commands
-
-
+ 
+ 
 class CRenamer(object):
-    ''' Der Renamer als objektorientierte Version: CRenamer '''    
+    ''' Der Renamer als objektorientierte Version: CRenamer '''
     
     def __init__(self, zielPath, neuerName, dateiEndung):
         self.__zielPath= zielPath
         self.__neuerName= neuerName
         self.__dateiEndung= dateiEndung
-
+ 
         
     def dateienUmbenennen(self):
         ''' Benennt die Dateien um '''
@@ -37,5 +37,3 @@ class CRenamer(object):
         
     def __del__(self):
         print 'Klasse geloescht'
-        
-    
