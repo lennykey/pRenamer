@@ -30,7 +30,6 @@ class MeinDialog(QtGui.QDialog, Dlg, CRenamer):
         #if str(self.dPfad.text()) == '' or (str(self.dNeuerName.text() == '') or str(self.dNeuerName.text() == 'Neuer Name')) or (str(self.dDateiEndung.text()) == '' or str(self.dDateiEndung.text()) == 'Dateiendung' ):
         if (str(self.dNeuerName.text()) == 'Neuer Name' or len(str(self.dNeuerName.text())) == 0) or (str(self.dPfad.text()) == '') or (str(self.dDateiEndung.text()) == 'Dateiendung' or len(str(self.dNeuerName.text())) == 0) :
             print 'Gleich null'
-            pass
         else:
             #print 'Umbennant'
             self.dateienUmbenennen()
