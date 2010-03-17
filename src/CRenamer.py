@@ -1,6 +1,12 @@
 import os
 import commands
- 
+
+'''
+
+Diese Klasse ist dazu da, um Dateien in einem Verzeichnis umzubenennen. Dabei ist es moeglich der Dateien 
+einen neuen Namen und eine neue Dateiendung zu geben. 
+
+''' 
  
 class CRenamer(object):
     ''' Der Renamer als objektorientierte Version: CRenamer '''
@@ -17,6 +23,8 @@ class CRenamer(object):
         string= commands.getoutput(command)
         
         listeDateien= str.split(string)
+        print listeDateien
+        
         anzahlDateien= len(listeDateien)
         anzahlStellen= len(str(anzahlDateien))
         
@@ -28,8 +36,12 @@ class CRenamer(object):
             
             zero= '0' * zeroTimes
             
+            
             newString= self.__neuerName + zero + str(counter) + '.' + self.__dateiEndung
             os.rename(self.__zielPath+eintrag, self.__zielPath+newString)
+           
+            #print 'Quelle :' + self.__zielPath+eintrag  
+            #print 'Ziel :' + self.__zielPath+newString
             
             counter += 1
         

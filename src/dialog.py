@@ -9,8 +9,10 @@
 
 from PyQt4 import QtCore, QtGui
 
-from PyKDE4.kio import KUrlRequester
+from PyKDE4.kio import KUrlRequester, KFile
 from PyKDE4.kdeui import KLineEdit
+
+
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -23,6 +25,7 @@ class Ui_Dialog(object):
         self.formLayout.setObjectName("formLayout")
         self.dPfad = KUrlRequester(self.groupBox)
         self.dPfad.setObjectName("dPfad")
+        self.dPfad.setMode(KFile.Mode(2))
         self.formLayout.setWidget(0, QtGui.QFormLayout.LabelRole, self.dPfad)
         self.dNeuerName = KLineEdit(self.groupBox)
         self.dNeuerName.setEnabled(True)
