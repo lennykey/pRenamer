@@ -7,6 +7,7 @@ from CRenamer import CRenamer
 
 
 
+
 class MeinDialog(QtGui.QDialog, Dlg, CRenamer):
     def __init__(self):
         QtGui.QDialog.__init__(self)
@@ -21,12 +22,20 @@ class MeinDialog(QtGui.QDialog, Dlg, CRenamer):
     def startRename(self):
         ''' Uebergebenen Pfad auslesen und Renamer starten '''
         
-        CRenamer.__init__(self, str(self.dPfad.text()), str(self.dNeuerName.text()), 'myEndung')
+        CRenamer.__init__(self, str(self.dPfad.text()), str(self.dNeuerName.text()), str(self.dDateiEndung.text()))
         print str(self.dPfad.text())
         print str(self.dNeuerName.text())
-        self.dateienUmbenennen()
-        #self.close()
+        print str(self.dDateiEndung.text())
         
+        #if str(self.dPfad.text()) == '' or (str(self.dNeuerName.text() == '') or str(self.dNeuerName.text() == 'Neuer Name')) or (str(self.dDateiEndung.text()) == '' or str(self.dDateiEndung.text()) == 'Dateiendung' ):
+        if (str(self.dNeuerName.text()) == 'Neuer Name' or len(str(self.dNeuerName.text())) == 0) or (str(self.dPfad.text()) == '') or (str(self.dDateiEndung.text()) == 'Dateiendung' or len(str(self.dNeuerName.text())) == 0) :
+            print 'Gleich null'
+            pass
+        else:
+            #print 'Umbennant'
+            self.dateienUmbenennen()
+            
+            #self.close()
         
         
     def onAbbrechen(self): 
