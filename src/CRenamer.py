@@ -22,7 +22,7 @@ class CRenamer(object):
         command= 'ls ' + self.__zielPath
         string= commands.getoutput(command)
         
-        listeDateien= str.split(string)
+        listeDateien= string.split('\n')
         print listeDateien
         
         anzahlDateien= len(listeDateien)
